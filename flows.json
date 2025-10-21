@@ -2,16 +2,212 @@
     {
         "id": "c4d5d8ee50863a4b",
         "type": "tab",
-        "label": "Flow 1",
+        "label": "Lectura de PLC",
         "disabled": false,
         "info": "",
         "env": []
     },
     {
-        "id": "9e6fdf48de76cd56",
+        "id": "697a83d4f066a91e",
+        "type": "tab",
+        "label": "Listo para partir",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "85254ca2957d3066",
+        "type": "tab",
+        "label": "Temperatura de gases de escape y cilindros",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "a10ed2923bad1111",
+        "type": "tab",
+        "label": "Temperatura de cilindros",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "dcc7ee023d1d400c",
+        "type": "group",
+        "z": "c4d5d8ee50863a4b",
+        "name": "Lectura desde PLC40 de variables analógicas",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "77571ffb97d842db",
+            "deddc37050703443",
+            "dd2b70470b0a0a6b",
+            "723f5f3a60414791"
+        ],
+        "x": 34,
+        "y": 79,
+        "w": 1012,
+        "h": 82
+    },
+    {
+        "id": "46a199f9982a2637",
+        "type": "modbus-client",
+        "name": "PLC 39",
+        "clienttype": "tcp",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "queueLogEnabled": false,
+        "failureLogEnabled": true,
+        "tcpHost": "192.168.3.39",
+        "tcpPort": 502,
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyUSB",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": 9600,
+        "serialDatabits": 8,
+        "serialStopbits": 1,
+        "serialParity": "none",
+        "serialConnectionDelay": 100,
+        "serialAsciiResponseStartDelimiter": "0x3A",
+        "unit_id": 1,
+        "commandDelay": 1,
+        "clientTimeout": 1000,
+        "reconnectOnTimeout": true,
+        "reconnectTimeout": 2000,
+        "parallelUnitIdsAllowed": true,
+        "showErrors": false,
+        "showWarnings": true,
+        "showLogs": true
+    },
+    {
+        "id": "2d675682676d85f1",
+        "type": "ui_tab",
+        "name": "Listo para partir",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "91aee51fc459fee6",
+        "type": "ui_group",
+        "name": "Group 1",
+        "tab": "2d675682676d85f1",
+        "order": 1,
+        "disp": false,
+        "width": "32",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "aa12e198a4d8718e",
+        "type": "ui_group",
+        "name": "Group 2",
+        "tab": "2d675682676d85f1",
+        "order": 2,
+        "disp": false,
+        "width": "32",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e3c28e6efb0403e9",
+        "type": "modbus-client",
+        "name": "PLC40",
+        "clienttype": "tcp",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "queueLogEnabled": false,
+        "failureLogEnabled": true,
+        "tcpHost": "192.168.3.40",
+        "tcpPort": 502,
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyUSB",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": 9600,
+        "serialDatabits": 8,
+        "serialStopbits": 1,
+        "serialParity": "none",
+        "serialConnectionDelay": 100,
+        "serialAsciiResponseStartDelimiter": "0x3A",
+        "unit_id": 1,
+        "commandDelay": 1,
+        "clientTimeout": 1000,
+        "reconnectOnTimeout": true,
+        "reconnectTimeout": 2000,
+        "parallelUnitIdsAllowed": true,
+        "showErrors": false,
+        "showWarnings": true,
+        "showLogs": true
+    },
+    {
+        "id": "727033d15cfbf88e",
+        "type": "ui_tab",
+        "name": "T° Cil",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "1b45975c904a214e",
+        "type": "ui_group",
+        "name": "TEMPERATURA DE CILINDROS [ °C ]",
+        "tab": "727033d15cfbf88e",
+        "order": 1,
+        "disp": true,
+        "width": "32",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "tab1",
+        "type": "ui_tab",
+        "name": "T° G. Esc.",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "grp1",
+        "type": "ui_group",
+        "name": "Temperatura de gases de escape [ °C ]",
+        "tab": "tab1",
+        "order": 1,
+        "disp": true,
+        "width": "32",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "691d9c4777d5c907",
+        "type": "ui_template",
+        "z": "c4d5d8ee50863a4b",
+        "group": "91aee51fc459fee6",
+        "name": "Estilo general",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "format": "<style>\n    md-toolbar {\n        min-height: 60px !important;\n        height: 60px !important;\n        padding-top: 2px !important;\n        padding-bottom: 2px !important;\n    }\n\n    .nr-dashboard-theme .md-toolbar-tools {\n        height: 60px !important;\n        min-height: 60px !important;\n        font-size: 18px !important;\n    }\n\n    md-tabs-wrapper,\n    md-tabs-canvas,\n    md-pagination-wrapper,\n    md-tab-item {\n        height: 60px !important;\n        min-height: 60px !important;\n    }\n</style>\n\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 140,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "77571ffb97d842db",
         "type": "inject",
         "z": "c4d5d8ee50863a4b",
-        "name": "",
+        "g": "dcc7ee023d1d400c",
+        "name": "Cada 1 segundo",
         "props": [
             {
                 "p": "payload"
@@ -21,15 +217,463 @@
                 "vt": "str"
             }
         ],
-        "repeat": "",
+        "repeat": "1",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
         "payload": "",
         "payloadType": "date",
+        "x": 170,
+        "y": 120,
+        "wires": [
+            [
+                "dd2b70470b0a0a6b"
+            ]
+        ]
+    },
+    {
+        "id": "deddc37050703443",
+        "type": "modbus-flex-getter",
+        "z": "c4d5d8ee50863a4b",
+        "g": "dcc7ee023d1d400c",
+        "name": "",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "logIOActivities": false,
+        "server": "e3c28e6efb0403e9",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 590,
+        "y": 120,
+        "wires": [
+            [
+                "723f5f3a60414791"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "dd2b70470b0a0a6b",
+        "type": "function",
+        "z": "c4d5d8ee50863a4b",
+        "g": "dcc7ee023d1d400c",
+        "name": "function 5",
+        "func": "msg.payload = {\n    \"unitid\" : 1,\n    \"fc\": 3,\n    \"address\": 0,\n    \"quantity\": 125\n}\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 370,
+        "y": 120,
+        "wires": [
+            [
+                "deddc37050703443"
+            ]
+        ]
+    },
+    {
+        "id": "723f5f3a60414791",
+        "type": "function",
+        "z": "c4d5d8ee50863a4b",
+        "g": "dcc7ee023d1d400c",
+        "name": "Lectura PLC de 0 a 124, PLC 40",
+        "func": "// Asegurarse de que msg.payload tenga al menos un valor\nif (!Array.isArray(msg.payload) || msg.payload.length < 1) {\n    return msg;\n}\n\n//**************** Valores Delay de alarmas ******************\nlet listado = global.get(\"numAlarmasPLC39\");\nfor(let i of listado){\n    let dirDelay = global.get(\"direccionDelayAlarma\" + i);\n    if(dirDelay < 125){    \n        let valor = msg.payload[dirDelay];\n        //Negativo ?\n        if(valor > 32767){ //negativo\n            valor = valor - 65536;\n        }    \n        global.set(\"delayAlarma\" + i, valor)\n    }\n}    \n//***************************************************************\n\n//*************** Valores mediciones analógicas\n//*** TEMPERATURA GASES DE ESCAPE\nglobal.set(\"valorAnalogo9\", msg.payload[1]);   // ALTA TEMP ESCAPE A1 C-500°\nglobal.set(\"valorAnalogo10\", msg.payload[2]);  // ALTA TEMP ESCAPE A1 D-500°\nglobal.set(\"valorAnalogo11\", msg.payload[3]);  // ALTA TEMP ESCAPE A2 C-500°\nglobal.set(\"valorAnalogo12\", msg.payload[4]);  // ALTA TEMP ESCAPE A2 D-500°\nglobal.set(\"valorAnalogo13\", msg.payload[5]);  // ALTA TEMP ESCAPE A3 C-500°\nglobal.set(\"valorAnalogo14\", msg.payload[6]);  // ALTA TEMP ESCAPE A3 D-500°\nglobal.set(\"valorAnalogo15\", msg.payload[7]);  // ALTA TEMP ESCAPE A4 C-500°\nglobal.set(\"valorAnalogo16\", msg.payload[8]);  // ALTA TEMP ESCAPE A4 D-500°\nglobal.set(\"valorAnalogo17\", msg.payload[9]);  // ALTA TEMP ESCAPE A5 C-500°\nglobal.set(\"valorAnalogo18\", msg.payload[10]);  // ALTA TEMP ESCAPE A5 D-500°\nglobal.set(\"valorAnalogo19\", msg.payload[11]);  // ALTA TEMP ESCAPE A6 C-500°\nglobal.set(\"valorAnalogo20\", msg.payload[12]);  // ALTA TEMP ESCAPE A6 D-500°\n\n\n//*** TEMPERATURA DE CILINDROS\nglobal.set(\"valorAnalogo41\", msg.payload[71]); // TE711A-TEMP CILINDRO A1 1\nglobal.set(\"valorAnalogo42\", msg.payload[72]); // TE712A-TEMP CILINDRO A1 2\nglobal.set(\"valorAnalogo43\", msg.payload[73]); // TE721A-TEMP CILINDRO A2 1\nglobal.set(\"valorAnalogo44\", msg.payload[74]); // TE722A-TEMP CILINDRO A2 2\nglobal.set(\"valorAnalogo45\", msg.payload[75]); // TE731A-TEMP CILINDRO A3 1\nglobal.set(\"valorAnalogo46\", msg.payload[76]); // TE732A-TEMP CILINDRO A3 2\nglobal.set(\"valorAnalogo47\", msg.payload[77]); // TE741A-TEMP CILINDRO A4 1\nglobal.set(\"valorAnalogo48\", msg.payload[78]); // TE742A-TEMP CILINDRO A4 2\nglobal.set(\"valorAnalogo49\", msg.payload[79]); // TE751A-TEMP CILINDRO A5 1\nglobal.set(\"valorAnalogo50\", msg.payload[80]); // TE752A-TEMP CILINDRO A5 2\nglobal.set(\"valorAnalogo51\", msg.payload[81]); // TE761A-TEMP CILINDRO A6 1\nglobal.set(\"valorAnalogo52\", msg.payload[82]); // TE762A-TEMP CILINDRO A6 2\n\n//*************************************************************************\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 890,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "938582954261822a",
+        "type": "modbus-read",
+        "z": "697a83d4f066a91e",
+        "name": "Modbus - Alarmas - PLC 39",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "1",
+        "dataType": "Coil",
+        "adr": "0",
+        "quantity": "6",
+        "rate": "1",
+        "rateUnit": "s",
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "server": "46a199f9982a2637",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
         "x": 260,
+        "y": 140,
+        "wires": [
+            [
+                "86c816a4fdcd55b6"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "86c816a4fdcd55b6",
+        "type": "function",
+        "z": "697a83d4f066a91e",
+        "name": "Variables globales",
+        "func": "var msgOut = [];\nlet listoParaPartir = true;\nfor(var i=0; i<6; i++){\n    if(msg.payload[i])\n        msgOut.push({payload: true})\n    else{    \n        msgOut.push({payload: false})\n        listoParaPartir = false;\n    }\n}   \n\nif(listoParaPartir)\n    msgOut.push({payload: true})\nelse    \n    msgOut.push({payload: false})\n    \n\nreturn msgOut;",
+        "outputs": 6,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 570,
+        "y": 140,
+        "wires": [
+            [
+                "4f45a0f0abcfea19"
+            ],
+            [
+                "7748baa6fdb3a953"
+            ],
+            [
+                "28c713ad174e2ad2"
+            ],
+            [
+                "aa085afa046f8650"
+            ],
+            [
+                "91b808992b021f03"
+            ],
+            [
+                "b9db93e29cd7aff7"
+            ]
+        ]
+    },
+    {
+        "id": "4f45a0f0abcfea19",
+        "type": "ui_led",
+        "z": "697a83d4f066a91e",
+        "order": 5,
+        "group": "91aee51fc459fee6",
+        "width": 0,
+        "height": 0,
+        "label": "PRESIÓN DE ACEITE DE LUBRICACIÓN DEL MOTOR PRINCIPAL",
+        "labelPlacement": "right",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "square",
+        "showGlow": true,
+        "name": "",
+        "x": 850,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "7748baa6fdb3a953",
+        "type": "ui_led",
+        "z": "697a83d4f066a91e",
+        "order": 1,
+        "group": "91aee51fc459fee6",
+        "width": 0,
+        "height": 0,
+        "label": "VIRADOR DEL EJE",
+        "labelPlacement": "right",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "square",
+        "showGlow": true,
+        "name": "",
+        "x": 850,
         "y": 160,
+        "wires": []
+    },
+    {
+        "id": "28c713ad174e2ad2",
+        "type": "ui_led",
+        "z": "697a83d4f066a91e",
+        "order": 2,
+        "group": "91aee51fc459fee6",
+        "width": 0,
+        "height": 0,
+        "label": "PALANCA POSICIÓN",
+        "labelPlacement": "right",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "square",
+        "showGlow": true,
+        "name": "",
+        "x": 850,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "aa085afa046f8650",
+        "type": "ui_led",
+        "z": "697a83d4f066a91e",
+        "order": 3,
+        "group": "91aee51fc459fee6",
+        "width": 0,
+        "height": 0,
+        "label": "MOTOR DETENIDO",
+        "labelPlacement": "right",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "square",
+        "showGlow": true,
+        "name": "",
+        "x": 850,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "91b808992b021f03",
+        "type": "ui_led",
+        "z": "697a83d4f066a91e",
+        "order": 4,
+        "group": "91aee51fc459fee6",
+        "width": 0,
+        "height": 0,
+        "label": "PRESIÓN DE ACEITE DE LUBRICACIÓN DE LA CAJA REDUCTORA",
+        "labelPlacement": "right",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "square",
+        "showGlow": true,
+        "name": "",
+        "x": 850,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "b9db93e29cd7aff7",
+        "type": "ui_led",
+        "z": "697a83d4f066a91e",
+        "order": 1,
+        "group": "aa12e198a4d8718e",
+        "width": 0,
+        "height": 0,
+        "label": "LISTO PARA PARTIR",
+        "labelPlacement": "right",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "LISTO PARA PARTIR",
+        "x": 900,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "125a5d5e2b7ad924",
+        "type": "inject",
+        "z": "85254ca2957d3066",
+        "name": "Simular temperaturas",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "5",
+        "once": true,
+        "onceDelay": "1",
+        "payloadType": "none",
+        "x": 220,
+        "y": 120,
+        "wires": [
+            [
+                "2aed4e11cfc14a2f"
+            ]
+        ]
+    },
+    {
+        "id": "2aed4e11cfc14a2f",
+        "type": "function",
+        "z": "85254ca2957d3066",
+        "name": "Generar temperaturas cilindros",
+        "func": "let cilindros = [];\n\nfor (let i = 1; i <= 6; i++) {   // 6 pares\n    let tempA = Math.floor(400 + Math.random() * 250);\n    let tempB = Math.floor(400 + Math.random() * 250);\n    cilindros.push({nombre: 'C' + i + 'A', valor: tempA});\n    cilindros.push({nombre: 'C' + i + 'B', valor: tempB});\n}\n\nmsg.payload = cilindros;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 120,
+        "wires": [
+            [
+                "956c769f51b78969"
+            ]
+        ]
+    },
+    {
+        "id": "956c769f51b78969",
+        "type": "ui_template",
+        "z": "85254ca2957d3066",
+        "group": "grp1",
+        "name": "Barras con valores",
+        "order": 2,
+        "width": "17",
+        "height": "7",
+        "format": "<style>\n  body,\n  .nr-dashboard-theme {\n    background-color: #1e1e1e !important;\n    /* Fondo oscuro general */\n    color: #f0f0f0 !important;\n  }\n\n  .bar-container {\n    display: flex;\n    justify-content: space-around;\n    align-items: flex-end;\n    height: 400px;\n    margin-top: 20px;\n    background-color: #2b2b2b;\n    /* Fondo del área de gráfico */\n    border-radius: 3px;\n    padding: 20px;\n    box-shadow: inset 0 0 10px #000;\n  }\n\n  .bar-wrapper {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    margin-right: 3px;\n  }\n\n  /* Separación cada dos barras */\n  .bar-wrapper:nth-child(2n) {\n    margin-right: 25px;\n  }\n\n  .bar {\n    width: 60px;\n    border-radius: 2px 2px 0 0;\n    display: flex;\n    justify-content: center;\n    align-items: flex-end;\n    transition: height 0.5s, background-color 0.5s, box-shadow 0.3s;\n    position: relative;\n    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);\n  }\n\n  .bar-value {\n    position: absolute;\n    top: -30px;\n    font-size: 20px;\n    font-weight: bold;\n    color: #f0f0f0;\n    /* Texto claro */\n  }\n\n  .bar-label {\n    text-align: center;\n    font-weight: bold;\n    margin-top: 8px;\n    color: #ccc;\n  }\n\n  /* Opcional: efecto hover */\n  .bar:hover {\n    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);\n    transform: scale(1.05);\n  }\n</style>\n\n<div class=\"bar-container\">\n  <div ng-repeat=\"c in msg.payload\" class=\"bar-wrapper\">\n    <div class=\"bar\" ng-style=\"{\n           'height': (c.valor/3)+'px',\n           'background-color': (c.valor>=500?'#e60000':'#33cc33')\n         }\">\n      <div class=\"bar-value\">{{c.valor}}</div>\n    </div>\n    <div class=\"bar-label\">{{c.nombre}}</div>\n  </div>\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 830,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3e0e153bb42f38c5",
+        "type": "inject",
+        "z": "a10ed2923bad1111",
+        "name": "Simular temperaturas",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "5",
+        "once": true,
+        "onceDelay": "1",
+        "payloadType": "none",
+        "x": 180,
+        "y": 120,
+        "wires": [
+            [
+                "3d6ae81e7266b970"
+            ]
+        ]
+    },
+    {
+        "id": "3d6ae81e7266b970",
+        "type": "function",
+        "z": "a10ed2923bad1111",
+        "name": "Generar temperaturas cilindros",
+        "func": "let cilindros = [];\n\nfor (let i = 1; i <= 6; i++) {   // 6 pares\n    let tempA = Math.floor(200 + Math.random() * 150);\n    let tempB = Math.floor(200 + Math.random() * 150);\n    cilindros.push({nombre: 'C' + i + 'A', valor: tempA});\n    cilindros.push({nombre: 'C' + i + 'B', valor: tempB});\n}\n\nmsg.payload = cilindros;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 120,
+        "wires": [
+            [
+                "abc8f5f671d8a7e4"
+            ]
+        ]
+    },
+    {
+        "id": "abc8f5f671d8a7e4",
+        "type": "ui_template",
+        "z": "a10ed2923bad1111",
+        "group": "1b45975c904a214e",
+        "name": "Barras con valores",
+        "order": 2,
+        "width": "17",
+        "height": "7",
+        "format": "<style>\n  body,\n  .nr-dashboard-theme {\n    background-color: #1e1e1e !important;\n    /* Fondo oscuro general */\n    color: #f0f0f0 !important;\n  }\n\n  .bar-container {\n    display: flex;\n    justify-content: space-around;\n    align-items: flex-end;\n    height: 400px;\n    margin-top: 20px;\n    background-color: #2b2b2b;\n    /* Fondo del área de gráfico */\n    border-radius: 3px;\n    padding: 20px;\n    box-shadow: inset 0 0 10px #000;\n  }\n\n  .bar-wrapper {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    margin-right: 3px;\n  }\n\n  /* Separación cada dos barras */\n  .bar-wrapper:nth-child(2n) {\n    margin-right: 25px;\n  }\n\n  .bar {\n    width: 60px;\n    border-radius: 2px 2px 0 0;\n    display: flex;\n    justify-content: center;\n    align-items: flex-end;\n    transition: height 0.5s, background-color 0.5s, box-shadow 0.3s;\n    position: relative;\n    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);\n  }\n\n  .bar-value {\n    position: absolute;\n    top: -30px;\n    font-size: 20px;\n    font-weight: bold;\n    color: #f0f0f0;\n    /* Texto claro */\n  }\n\n  .bar-label {\n    text-align: center;\n    font-weight: bold;\n    margin-top: 8px;\n    color: #ccc;\n  }\n\n  /* Opcional: efecto hover */\n  .bar:hover {\n    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);\n    transform: scale(1.05);\n  }\n</style>\n\n<div class=\"bar-container\">\n  <div ng-repeat=\"c in msg.payload\" class=\"bar-wrapper\">\n    <div class=\"bar\" ng-style=\"{\n           'height': (c.valor/2)+'px',\n           'background-color': (c.valor>=300?'#e60000':'#33cc33')\n         }\">\n      <div class=\"bar-value\">{{c.valor}}</div>\n    </div>\n    <div class=\"bar-label\">{{c.nombre}}</div>\n  </div>\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 790,
+        "y": 120,
         "wires": [
             []
         ]
