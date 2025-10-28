@@ -807,7 +807,7 @@
         "type": "function",
         "z": "a10ed2923bad1111",
         "name": "Generar temperaturas cilindros",
-        "func": "let cilindros = [];\nlet vAlarma = 300;\nlet maximo = 400;\nlet minimo = 0;\n\nfor (let i = 0; i < 6; i++) {   // 6 pares\n    let tempA = global.get(\"valorAnalogo\" + (71 + i*2)) ;\n    let tempB = global.get(\"valorAnalogo\" + (72 + i*2));\n    if (tempA > maximo)\n        tempA = maximo;\n    if (tempA < minimo)\n        tempA = minimo;\n    if (tempB > maximo)\n        tempB = maximo;\n    if (tempB < minimo)\n        tempB = minimo;\n    cilindros.push({nombre: 'C' + (i+1) + 'A', valor: tempA, valorAlarma:vAlarma});\n    cilindros.push({ nombre: 'C' + (i+1) + 'B', valor: tempB, valorAlarma: vAlarma });\n}\n\nmsg.payload = cilindros;\nreturn msg;\n",
+        "func": "let cilindros = [];\nlet vAlarma = 300;\nlet maximo = 400;\nlet minimo = 0;\n\nfor (let i = 0; i < 6; i++) {   // 6 pares\n    let tempA = global.get(\"valorAnalogo\" + (41 + i*2)) ;\n    let tempB = global.get(\"valorAnalogo\" + (42 + i*2));\n    if (tempA > maximo)\n        tempA = maximo;\n    if (tempA < minimo)\n        tempA = minimo;\n    if (tempB > maximo)\n        tempB = maximo;\n    if (tempB < minimo)\n        tempB = minimo;\n    cilindros.push({nombre: 'C' + (i+1) + 'A', valor: tempA, valorAlarma:vAlarma});\n    cilindros.push({ nombre: 'C' + (i+1) + 'B', valor: tempB, valorAlarma: vAlarma });\n}\n\nmsg.payload = cilindros;\nreturn msg;\n",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
